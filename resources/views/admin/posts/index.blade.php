@@ -22,7 +22,7 @@
                         <div class="d-flex">
                             <a href="{{route("posts.show", $item->id)}}"><button type="button" class="btn btn-primary">View</button></a>
                             <a href="{{route("posts.edit", $item->id)}}"><button type="button" class="btn btn-warning">Edit</button></a>
-                            <a href=""><button type="button" class="btn btn-danger">Delete</button></a>
+                            <a href="{{route("posts.destroy", $item->id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
                         </div>
                     </td>
                 </tr>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1 class="text-uppercase mb-5">Edit post </h1>
-    <form action="{{route('posts.store')}}" method="post" >
+    <form action="{{route('posts.update')}}" method="post" >
         @csrf
 
         <div class="form-group">
