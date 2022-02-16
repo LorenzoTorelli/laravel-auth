@@ -116,7 +116,7 @@ class PostController extends Controller
 
             $slug = Str::of($post->title)->slug("-");
             
-            if($slug != $posts->slug) {
+            if($slug != $post->slug) {
                 $count = 1;
 
                 while( Post::where("slug", $slug)->first()) {
@@ -133,7 +133,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route("admin.posts.show", $post->id);
+        return redirect()->route("posts.show", $post->id);
     }
 
     /**
@@ -146,7 +146,7 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route("admin.posts.index");
+        return redirect()->route("posts.index");
 
     }
 }

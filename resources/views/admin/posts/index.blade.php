@@ -22,7 +22,11 @@
                         <div class="d-flex">
                             <a href="{{route("posts.show", $item->id)}}"><button type="button" class="btn btn-primary">View</button></a>
                             <a href="{{route("posts.edit", $item->id)}}"><button type="button" class="btn btn-warning">Edit</button></a>
-                            <a href="{{route("posts.destroy", $item->id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                            <form action="{{route('posts.destroy', $item->id)}}" method="post">
+                                @csrf
+                                @method("DELETE")
+                                <button class="btn btn-danger" type="submit" >Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>

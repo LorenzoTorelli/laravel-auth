@@ -3,8 +3,9 @@
 @section('content')
 <div class="container">
     <h1 class="text-uppercase mb-5">Edit post </h1>
-    <form action="{{route('posts.update')}}" method="post" >
+    <form action="{{route('posts.update', $post->id)}}" method="post" >
         @csrf
+        @method("PUT")
 
         <div class="form-group">
             <label for="title">Title</label>
